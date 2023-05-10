@@ -14,7 +14,7 @@
     color: white;
     padding: 11px;
     width: 170px;
-    height: 70px;
+    height: 60px;
     border: none;
     background-color: #901C1C;
     border-radius: 5px;
@@ -73,4 +73,93 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+@import url("photographer.css");
+
+body {
+    font-family: "DM Sans", sans-serif;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+h1 {
+    color: #901C1C;
+    margin-right: 100px;
+}
+
+/* span {
+    color: #901C1C;
+    font-weight: 900;
+    margin: 0;
+
+} */
+
+.logo {
+    height: 50px;
+    margin-left: 100px;
+}
+
+.photograph-header {
+    position: relative;
+}
+
+.contact_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 41%;
+    top: 30%;
+    padding: 5px;
+}
+
+
+.card-img {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    right: 5%;
+    top: 15%;
+}
+
+.card-name {
+    margin-bottom: 15px;
+    padding-top: 5%;
+    padding-left: 3%;
+    color: #D3573C;
+    font-size: 33px;
+
+
+    
+}
+
+.card-city {
+    color: #901C1C;
+    font-weight: 700;
+    padding-top: 5%;
+    padding-left: 3%;
+}
+
+.card-tagline {
+    font-size: 13px;
+    font-weight: 800;
+    padding-top: 2%;
+    padding-left: 3%;
+}
+
+.card-price {
+    display: none;
 }
