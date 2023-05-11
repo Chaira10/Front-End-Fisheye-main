@@ -4,12 +4,40 @@
         const { id, photographerId, title, image, likes, date, price } = data;
     
         const picture = `assets/photographers/${photographerId}/${image}`;
+        const video = `assets/photographers/${photographerId}/${title}`;
+
     
         function getMediaCardDOM() {
             // creation de l'élément article
             const article = document.createElement( 'article' );
             article.classList.add('media-card', 'card-media'); // Ajout d'une classe à l'élément <article>
-    
+            if (video) {
+                fetch(video)
+                    .then(response => {
+                        if (response.ok) {
+            // creation de la div video
+            const divVideo = document.createElement( 'video' );
+            divVideo.setAttribute("controls", '');
+
+            divVideo.classList.add('media-video');
+   
+
+            // creation de la balise video
+            const baliseVideo = document.createElement( 'source' );
+            baliseVideo.setAttribute("src", video);
+            baliseVideo.setAttribute("type", 'video/mp4');
+            baliseVideo.width = '323'; // Définition de la largeur de la vidéo
+            baliseVideo.height = '323'; // Définition de la hauteur de la vidéo
+            divVideo.appendChild( baliseVideo );
+            article.appendChild(divVideo);
+        }
+    });
+}
+
+if (picture) {
+    fetch(picture)
+        .then(response => {
+            if (response.ok) {
             // creation div img
             const divImg = document.createElement('div');
             divImg.classList.add('img-media', 'media-img');
@@ -24,9 +52,13 @@
             //ajout de l'image dans la balise article
             divImg.appendChild(img);
             article.appendChild(divImg);
+        }
+    });
+}
+
     
             // creation de la div text
-            const div = document.createElement('div');
+            const div = document.createElement('span');
             div.classList.add('text-media', 'media-text');
             // creation de l'élément h2
             const h2 = document.createElement( 'h2' );
@@ -44,6 +76,12 @@
             span1.classList.add('card-likes', 'likes-card'); // Ajout d'une classe à l'élément <span>
             // ajout de la ville et du pays dans le span
             span1.textContent = likes;
+            // création de l'élément i pour l'icône de coeur
+            const heartIcon = document.createElement('i');
+            heartIcon.classList.add('fa', 'fa-sharp', 'fa-solid', 'fa-heart');
+
+// ajout de l'icône de coeur à l'élément span1
+span1.appendChild(heartIcon);
             // ajout du span dans la balise article
             // article.appendChild( span1 );
             div.appendChild( span1 );
@@ -54,8 +92,9 @@
             // ajout du prix dans le p
             p2.textContent = ` ${price}$ / jour`;
             // ajout du p dans la balise article
-            // article.appendChild( p2 );
-            div.appendChild( p2 );
+            article.appendChild( p2 );
+            // div.appendChild( p2 );
+
             article.appendChild( div );
     
             return (article);
