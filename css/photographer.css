@@ -75,6 +75,11 @@ form input {
     border-radius: 5px;
 }
 
+textarea {
+    width: 100%;
+    height: 200px;
+}
+
 @import url("photographer.css");
 
 body {
@@ -112,8 +117,34 @@ h1 {
 
 .photograph-header {
     position: relative;
+    display: flex;
+
+
 }
 
+.card-photographer {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.text-card {
+    margin-left: 0;
+    width: 60%;
+}
+
+.container-img {
+    display: flex;
+    /* align-items: flex-end; */
+    justify-content: flex-end;
+    /* margin-right: auto; */
+}
+
+.price-card {
+    color: transparent;
+}
 .contact_button {
     display: flex;
     align-items: center;
@@ -125,41 +156,98 @@ h1 {
 }
 
 
-.card-img {
+#img-card{
+    display: flex;
     border-radius: 50%;
     object-fit: cover;
     height: 150px;
     width: 150px;
-    position: absolute;
+    /* position: absolute; */
+    /* padding-left: 80%; */
+    margin-top: 5%;
     right: 5%;
     top: 15%;
 }
 
-.card-name {
-    margin-bottom: 15px;
+.name-card {
+    margin-bottom: 11px;
     padding-top: 5%;
     padding-left: 3%;
     color: #D3573C;
     font-size: 33px;
+    margin-top: 0px;
 
 
     
-}
+} 
 
-.card-city {
+.city-card {
     color: #901C1C;
     font-weight: 700;
     padding-top: 5%;
     padding-left: 3%;
 }
 
-.card-tagline {
+.tagline-card {
     font-size: 13px;
     font-weight: 800;
     padding-top: 2%;
     padding-left: 3%;
 }
 
-.card-price {
-    display: none;
+
+
+.submit {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 60px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#media-container {
+    display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(4, 1fr);
+grid-column-gap: 27px;
+grid-row-gap: 27px;
+margin-top: 50px;
+padding-left: 15px;
+padding-right: 15px;
+}
+.media-card {
+    display: flex;
+    flex-direction: column;
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
+    /* grid-template-rows: repeat(4, 1fr); */
+    /* grid-column-gap: 27px;
+    grid-row-gap: 27px; */
+    /* width: 30%;
+    height: 30%; */
+}
+
+.img-media {
+    position: relative;
+}
+
+.img-media img {
+    width: 323px;
+    height: 323px;
+    object-fit: cover;
+}
+
+.text-media {
+    /* position: absolute; */
+    /* top: 5px; */
+}
+
+.card-title {
+    margin: 0;
+    color: #901C1C;
 }
