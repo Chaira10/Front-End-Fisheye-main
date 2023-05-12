@@ -103,12 +103,6 @@ h1 {
     margin-right: 100px;
 }
 
-/* span {
-    color: #901C1C;
-    font-weight: 900;
-    margin: 0;
-
-} */
 
 .logo {
     height: 50px;
@@ -137,9 +131,7 @@ h1 {
 
 .container-img {
     display: flex;
-    /* align-items: flex-end; */
     justify-content: flex-end;
-    /* margin-right: auto; */
 }
 
 .price-card {
@@ -162,8 +154,6 @@ h1 {
     object-fit: cover;
     height: 150px;
     width: 150px;
-    /* position: absolute; */
-    /* padding-left: 80%; */
     margin-top: 5%;
     right: 5%;
     top: 15%;
@@ -222,7 +212,7 @@ padding-right: 15px;
 }
 .media-card {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 
 .img-media {
@@ -231,10 +221,11 @@ padding-right: 15px;
 
 }
 
-.img-media img {
+.media  {
     width: 500px;
     height: 500px;
     object-fit: cover;
+    position: relative;
 }
 
 .text-media {
@@ -271,4 +262,45 @@ i {
 
 .media-price {
     color: transparent ;
+}
+
+.hover-info {
+    background-color:#DB8876;
+    position: absolute;
+    width: 400px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    /* text-align: justify; */
+    /* flex-direction: row; */
+    padding-left: 15px;
+    padding-right: 15px;
+    /* padding-top: 15px; */
+    margin-right: 25px;
+    margin-left: 25px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+    /* top: 0px; */
+}
+
+.hover-likes  {
+    display:flex;
+    /* margin-right: auto; */
+    font-size: 23px;
+    font-weight: bold;
+    /* margin-top: 20px; */
+    margin-right: 230px;
+
+}
+.hover-price {
+    display:flex;
+    font-size: 23px;
+    font-weight: bold;
+    /* margin-top: 0px; */
+    /* margin-left: auto; */
+
+
+
 }
